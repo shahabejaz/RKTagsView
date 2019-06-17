@@ -59,6 +59,7 @@ IB_DESIGNABLE
 - (void)reloadButtons;
 
 - (void)addTag:(NSString *)tag;
+- (void)addTag:(NSString *)tag withTintColor:(UIColor *)tintColor andTitleColor:(UIColor *)titleColor;
 - (void)insertTag:(NSString *)tag atIndex:(NSInteger)index;
 - (void)moveTagAtIndex:(NSInteger)index toIndex:(NSInteger)newIndex; // can be animated
 - (void)removeTagAtIndex:(NSInteger)index;

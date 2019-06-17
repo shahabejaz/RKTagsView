@@ -347,11 +347,19 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
   }
 }
 
+- (void)addTag:(NSString *)tag withTintColor:(UIColor *)tintColor andTitleColor:(UIColor *)titleColor {
+    [self insertTag:tag atIndex:self.mutableTags.count withTintColor:tintColor andTitleColor:titleColor];
+}
+
 - (void)addTag:(NSString *)tag {
   [self insertTag:tag atIndex:self.mutableTags.count];
 }
 
 - (void)insertTag:(NSString *)tag atIndex:(NSInteger)index {
+    [self insertTag:tag atIndex:index withTintColor:self.tintColor andTitleColor:[UIColor whiteColor]];
+}
+
+- (void)insertTag:(NSString *)tag atIndex:(NSInteger)index withTintColor:(UIColor *)tintColor andTitleColor:(UIColor *)titleColor {
   if (index >= 0 && index <= self.mutableTags.count) {
     [self.mutableTags insertObject:tag atIndex:index];
     UIButton *tagButton;
@@ -361,13 +369,13 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
       tagButton = [UIButton new];
       tagButton.layer.cornerRadius = DEFAULT_BUTTON_CORNER_RADIUS;
       tagButton.layer.borderWidth = DEFAULT_BUTTON_BORDER_WIDTH;
-      tagButton.layer.borderColor = self.tintColor.CGColor;
+      tagButton.layer.borderColor = tintColor.CGColor;
       tagButton.titleLabel.font = self.font;
-      tagButton.tintColor = self.tintColor;
+      tagButton.tintColor = tintColor;
       tagButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
       [tagButton setTitle:tag forState:UIControlStateNormal];
-      [tagButton setTitleColor:self.tintColor forState:UIControlStateNormal];
-      [tagButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+      [tagButton setTitleColor:tintColor forState:UIControlStateNormal];
+      [tagButton setTitleColor:titleColor forState:UIControlStateSelected];
       tagButton.contentEdgeInsets = UIEdgeInsetsMake(DEFAULT_BUTTON_VERTICAL_PADDING, DEFAULT_BUTTON_HORIZONTAL_PADDING, DEFAULT_BUTTON_VERTICAL_PADDING, DEFAULT_BUTTON_HORIZONTAL_PADDING);
       tagButton.tag = DEFAULT_BUTTON_TAG;
     }
@@ -418,7 +426,7 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
     }
     self.mutableTagButtons[index].selected = YES;
     if (self.mutableTagButtons[index].tag == DEFAULT_BUTTON_TAG) {
-      self.mutableTagButtons[index].backgroundColor = self.tintColor;
+        self.mutableTagButtons[index].backgroundColor = self.mutableTagButtons[index].tintColor;
     }
   }
 }
