@@ -5,15 +5,15 @@
 
 Pod::Spec.new do |s|
   s.name             = "RKTagsView"
-  s.version          = "1.4.0"
+  s.version          = "1.5.0"
   s.summary          = "Highly customizable iOS tags view (like NSTokenField)."
-  s.homepage         = "https://github.com/kuler90/RKTagsView"
-  s.screenshots      = "https://raw.githubusercontent.com/kuler90/RKTagsView/master/sample.gif"
+  s.homepage         = "https://github.com/shahabejaz/RKTagsView"
+  s.screenshots      = "https://raw.githubusercontent.com/shahabejaz/RKTagsView/master/sample.gif"
   s.license          = 'MIT'
-  s.author           = { "Roman Kulesha" => "kulesha.r@gmail.com" }
-  s.source           = { :git => "https://github.com/kuler90/RKTagsView.git", :tag => s.version.to_s }
+  s.author           = { "Roman Kulesha" => "shahabejaz36@gmail.com" }
+  s.source           = { :git => "https://github.com/shahabejaz/RKTagsView.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '10.0'
   s.requires_arc = true
 
   s.source_files = 'Source/*'
