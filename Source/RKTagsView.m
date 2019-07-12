@@ -14,7 +14,6 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
 
 @interface RKTagsView()
 @property (nonatomic, strong) NSMutableArray<NSString *> *mutableTags;
-@property (nonatomic, strong) NSMutableArray<UIButton *> *mutableTagButtons;
 @property (nonatomic, strong, readwrite) UIScrollView *scrollView;
 @property (nonatomic, strong) __RKInputTextField *inputTextField;
 @property (nonatomic, strong) UIButton *becomeFirstResponderButton;
@@ -213,9 +212,6 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
   return self.mutableTags.copy;
 }
 
-- (NSArray<UIButton *> *)tagsButtons {
-    return self.mutableTagButtons.copy;
-}
 - (NSArray<NSNumber *> *)selectedTagIndexes {
   NSMutableArray *mutableIndexes = [NSMutableArray new];
   for (int index = 0; index < self.mutableTagButtons.count; index++) {

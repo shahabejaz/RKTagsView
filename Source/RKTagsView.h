@@ -35,7 +35,7 @@ IB_DESIGNABLE
 @property (nonatomic, strong, readonly) UIScrollView *scrollView; // scrollView delegate is not used
 @property (nonatomic, strong, readonly) UITextField *textField; // textfield delegate is not used
 @property (nonatomic, copy, readonly) NSArray<NSString *> *tags;
-@property (nonatomic, copy) NSArray<UIButton *> *tagsButtons;
+@property (nonatomic, strong) NSMutableArray<UIButton *> *mutableTagButtons;
 @property (nonatomic, copy, readonly) NSArray<NSNumber *> *selectedTagIndexes;
 @property (nonatomic, weak, nullable) IBOutlet id<RKTagsViewDelegate> delegate;
 @property (nonatomic, readonly) CGSize contentSize;
