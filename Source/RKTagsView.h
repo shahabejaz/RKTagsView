@@ -16,6 +16,8 @@ typedef NS_ENUM(NSInteger, RKTagsViewTextFieldAlign) { // align is relative to a
 
 @optional
 
+- (UIButton *)tagsView:(RKTagsView *)tagsView buttonForTagAtIndex:(NSInteger)index withTintColor:(UIColor *)tintColor andTitleColor:(UIColor *)titleColor;
+
 - (UIButton *)tagsView:(RKTagsView *)tagsView buttonForTagAtIndex:(NSInteger)index; // used default tag button if not implemented
 - (BOOL)tagsView:(RKTagsView *)tagsView shouldAddTagWithText:(NSString *)text; // called when 'space' key pressed. return NO to ignore tag
 - (BOOL)tagsView:(RKTagsView *)tagsView shouldSelectTagAtIndex:(NSInteger)index; // called when tag pressed. return NO to disallow selecting tag
