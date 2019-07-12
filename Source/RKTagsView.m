@@ -213,6 +213,9 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
   return self.mutableTags.copy;
 }
 
+- (NSArray<UIButton *> *)tagButtons {
+    return self.mutableTagButtons.copy;
+}
 - (NSArray<NSNumber *> *)selectedTagIndexes {
   NSMutableArray *mutableIndexes = [NSMutableArray new];
   for (int index = 0; index < self.mutableTagButtons.count; index++) {
