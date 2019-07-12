@@ -364,7 +364,7 @@ const CGFloat RKTagsViewAutomaticDimension = -0.0001;
     [self.mutableTags insertObject:tag atIndex:index];
     UIButton *tagButton;
     if ([self.delegate respondsToSelector:@selector(tagsView:buttonForTagAtIndex:)]) {
-      tagButton = [self.delegate tagsView:self buttonForTagAtIndex:index withTintColor:tintColor andTitleColor:titleColor];
+        tagButton = [self.delegate tagsView:self buttonForTagAtIndex:index title:tag withTintColor:tintColor andTitleColor:titleColor];
     } else {
       tagButton = [UIButton new];
       tagButton.layer.cornerRadius = DEFAULT_BUTTON_CORNER_RADIUS;
