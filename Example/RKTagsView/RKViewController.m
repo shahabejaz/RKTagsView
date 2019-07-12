@@ -79,6 +79,10 @@
       [self.tagsView addTag:word];
     }
   }
+    
+    for (UIButton *btn  in self.tagsView.tagsButtons) {
+        NSLog(@"BTN");
+    }
 }
 
 - (IBAction)removeTagsTapped {
